@@ -104,38 +104,20 @@ const App = () => {
             <th>Is Permanent</th>
           </tr>
         </thead>
-        {/* <tbody>
-          <tr>
-            <td>1.</td>
-            <td>Office</td>
-            <td>Surabaya</td>
-            <td>Yes</td>
-          </tr>
-          <tr>
-            <td>2.</td>
-            <td>Rumah Adi</td>
-            <td>Semarang</td>
-            <td>Yes</td>
-          </tr>
-          <tr>
-            <td>3.</td>
-            <td>Kantor Kelurahan</td>
-            <td>Blora, Jawa Tengah</td>
-            <td>No</td>
-          </tr>
-          <tr>
-            <td>4.</td>
-            <td>Kantor DPRD</td>
-            <td>Jakarta Timur</td>
-            <td>Yes</td>
-          </tr>
-          <tr>
-            <td>5.</td>
-            <td>Kantor Kecamatan</td>
-            <td>Jakarta Barat</td>
-            <td>Yes</td>
-          </tr>
-        </tbody> */}
+        <tbody>
+          {data
+            .filter((item) =>
+              item.name.toLowerCase().includes(searchTerm.toLowerCase())
+            )
+            .map((item, index) => (
+              <tr key={index}>
+                <td>{index + 1}</td>
+                <td>{item.name}</td>
+                <td>{item.address}</td>
+                <td>{item.isPermanent ? "Yes" : "No"}</td>
+              </tr>
+            ))}
+        </tbody>
       </table>
     </div>
   );
