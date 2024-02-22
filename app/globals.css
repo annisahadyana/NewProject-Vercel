@@ -4,19 +4,20 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
+  --background-start-rgb: 255, 255, 255;
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-start-rgb: 255, 255, 255;
+    --background-end-rgb: 255, 255, 255;
   }
 }
 
 body {
+  text-align: center;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -30,4 +31,40 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.app {
+  display: inline-block;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+}
+h1 {
+  margin-top: 50px;
+  font-size: 30px;
+  font-weight: 700;
+}
+p {
+  margin-top: 50px;
+}
+.search {
+  margin-top: 30px;
+  padding: 10px; /* Mungkin menyebabkan input sulit terlihat */
+  border: 1px solid black; /* Mungkin menyembunyikan border input */
+  border-radius: 5px;
+  background-color: transparent; /* Mungkin membuat input tidak terlihat di atas latar belakang tertentu */
+  color: black; /* Mungkin membuat teks input tidak terlihat */
+  align-items: center;
+  text-align: left;
+  justify-content: center;
+}
+table {
+  margin-top: 25px;
+}
+table,
+th,
+tr,
+td {
+  color: black;
+  border: 2px solid black;
 }
